@@ -1,54 +1,58 @@
-# Template — Novo Desafio
+# Template para novos desafios
 
-> Use este modelo ao criar uma nova branch `challenge/<slug>`. Copie para o `README.md` da branch do desafio e preencha.
+> Use este modelo ao criar uma nova branch `challenge/<slug>`. Cada desafio é oferecido em quatro níveis (Júnior, Pleno, Sênior, Especialista), com requisitos crescentes.
 
----
+## Estrutura esperada da branch
 
-# [Nome do Desafio]
+```
+challenge/<slug>/
+├── README.md            # índice: contexto, o que há em cada arquivo, como escolher o nível
+├── niveis/
+│   ├── junior.md
+│   ├── pleno.md
+│   ├── senior.md
+│   └── especialista.md
+├── docs/
+│   ├── schemas.md       # schemas de saída compartilhados
+│   └── avaliacao.md     # régua e método de pontuação
+├── pyproject.toml       # Poetry (níveis Pleno+)
+├── requirements.txt     # alternativa simples (nível Júnior)
+└── .env.example
+```
 
-## 🎯 Contexto
+## Regra dos níveis
 
-<!-- O problema REAL por trás do desafio. Por que a VoxRadar resolve isso? -->
+Cada nível **inclui tudo do anterior** e adiciona exigências. O candidato escolhe **um** nível.
 
-## 🧩 Objetivo
+| Nível | Foco |
+|---|---|
+| Júnior | Fazer funcionar com código organizado. |
+| Pleno | Engenharia de software (deps com Poetry, testes, tipagem, CLI). |
+| Sênior | Arquitetura, resiliência, persistência, observabilidade, Docker. |
+| Especialista | Escala, concorrência, design documentado, infraestrutura. |
 
-<!-- O que, no fim, precisa existir e funcionar. -->
+## Esqueleto de cada `niveis/<nivel>.md`
 
-## 📋 Requisitos funcionais
+```markdown
+# [Desafio] · Nível [X]
 
-<!-- Liste cada funcionalidade com ENTRADA e SAÍDA esperadas. -->
+## Pré-requisito
+Inclui tudo do nível anterior.
 
-1. **[Funcionalidade]** — Dado _[entrada]_, produzir _[saída]_.
+## O que este nível cobra
+<!-- Requisitos específicos, com entrada/saída quando aplicável. -->
 
-## 🛠️ Requisitos técnicos
+## Entregáveis
+- [ ] ...
 
-- Stack: <!-- Python preferencial / livre -->
-- <!-- constraints, formato de saída, persistência, etc. -->
+## Checklist de entrega
+- [ ] ...
 
-## 📦 Entregáveis
-
-- [ ] Código-fonte
-- [ ] Instruções de execução
-- [ ] <!-- amostra de saída, testes, etc. -->
-
-## 🧱 Estrutura sugerida
-
-<!-- Árvore de diretórios recomendada (não obrigatória). -->
-
-## ✅ Checklist de entrega
-
-- [ ] <!-- item -->
-
-## 📊 Critérios de avaliação
-
+## Critérios de avaliação
 | Critério | Peso |
 |---|---|
-| <!-- ... --> | <!-- % --> |
+| ... | ... |
 
-## 📤 Como entregar
-
-Fork + PR para `challenge/<slug>` (ver README da `main`).
-
-## ⚠️ Regras e observações
-
-<!-- Ética, legalidade, rate limit, LGPD. -->
+## O que NÃO é exigido neste nível
+<!-- Deixa claro o limite superior de escopo. -->
+```

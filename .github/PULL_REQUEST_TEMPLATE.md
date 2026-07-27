@@ -1,12 +1,14 @@
 <!--
-  Obrigado por participar de um desafio técnico da VoxRadar!
+  Obrigado por participar de um desafio técnico da VoxRadar.
   Preencha as seções abaixo. Um PR bem descrito conta pontos.
 -->
 
 ## 🧩 Desafio
 
 - **Desafio:** <!-- ex.: Kwai -->
+- **Nível escolhido:** <!-- junior | pleno | senior | especialista -->
 - **Branch base:** `challenge/<slug>`
+- **Branch de solução:** `solution/<slug>-<nivel>-<seu-usuario>`
 - **Candidato(a):** <!-- seu nome / usuário -->
 
 ## 📝 Resumo da solução
@@ -25,9 +27,10 @@
 
 ## ✅ Checklist de entrega
 
-<!-- Copie e marque o checklist específico do desafio (está no README da branch). -->
+<!-- Copie e marque o checklist do NÍVEL escolhido (está em niveis/<nivel>.md na branch do desafio). -->
 
-- [ ] Li o README do desafio e cumpri os requisitos funcionais
+- [ ] Li o arquivo do meu nível e cumpri os requisitos
+- [ ] Nomeei a branch como `solution/<slug>-<nivel>-<usuario>`
 - [ ] Documentei como rodar o projeto
 - [ ] Não commitei credenciais/segredos (usei `.env` + `.env.example`)
 - [ ] Descrevi minhas decisões e limitações neste PR
