@@ -6,9 +6,9 @@
 ## 🧩 Desafio
 
 - **Desafio:** <!-- ex.: Kwai -->
-- **Nível escolhido:** <!-- junior | pleno | senior | especialista -->
+- **Nível escolhido:** <!-- 0 | 1 | 2 | 3 -->
 - **Branch base:** `challenge/<slug>`
-- **Branch de solução:** `solution/<slug>-<nivel>-<seu-usuario>`
+- **Branch de solução:** `solution/<slug>-nivel<N>-<seu-usuario>`
 - **Candidato(a):** <!-- seu nome / usuário -->
 
 ## 📝 Resumo da solução
@@ -27,10 +27,10 @@
 
 ## ✅ Checklist de entrega
 
-<!-- Copie e marque o checklist do NÍVEL escolhido (está em niveis/<nivel>.md na branch do desafio). -->
+<!-- Copie e marque o checklist do NÍVEL escolhido (está em niveis/nivel-<N>.md na branch do desafio). -->
 
 - [ ] Li o arquivo do meu nível e cumpri os requisitos
-- [ ] Nomeei a branch como `solution/<slug>-<nivel>-<usuario>`
+- [ ] Nomeei a branch como `solution/<slug>-nivel<N>-<usuario>`
 - [ ] Documentei como rodar o projeto
 - [ ] Não commitei credenciais/segredos (usei `.env` + `.env.example`)
 - [ ] Descrevi minhas decisões e limitações neste PR

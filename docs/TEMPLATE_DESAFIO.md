@@ -1,6 +1,6 @@
 # Template para novos desafios
 
-> Use este modelo ao criar uma nova branch `challenge/<slug>`. Cada desafio é oferecido em quatro níveis (Júnior, Pleno, Sênior, Especialista), com requisitos crescentes.
+> Use este modelo ao criar uma nova branch `challenge/<slug>`. Cada desafio é oferecido em quatro níveis numerados (0 Iniciante, 1, 2, 3 Avançado), com requisitos crescentes.
 
 ## Estrutura esperada da branch
 
@@ -8,15 +8,15 @@
 challenge/<slug>/
 ├── README.md            # índice: contexto, o que há em cada arquivo, como escolher o nível
 ├── niveis/
-│   ├── junior.md
-│   ├── pleno.md
-│   ├── senior.md
-│   └── especialista.md
+│   ├── nivel-0.md
+│   ├── nivel-1.md
+│   ├── nivel-2.md
+│   └── nivel-3.md
 ├── docs/
 │   ├── schemas.md       # schemas de saída compartilhados
 │   └── avaliacao.md     # régua e método de pontuação
-├── pyproject.toml       # Poetry (níveis Pleno+)
-├── requirements.txt     # alternativa simples (nível Júnior)
+├── pyproject.toml       # Poetry (Nível 1+)
+├── requirements.txt     # alternativa simples (Nível 0)
 └── .env.example
 ```
 
@@ -26,15 +26,15 @@ Cada nível **inclui tudo do anterior** e adiciona exigências. O candidato esco
 
 | Nível | Foco |
 |---|---|
-| Júnior | Fazer funcionar com código organizado. |
-| Pleno | Engenharia de software (deps com Poetry, testes, tipagem, CLI). |
-| Sênior | Arquitetura, resiliência, persistência, observabilidade, Docker. |
-| Especialista | Escala, concorrência, design documentado, infraestrutura. |
+| Nível 0 · Iniciante | Fazer funcionar com código organizado. |
+| Nível 1 | Engenharia de software (deps com Poetry, testes, tipagem, CLI). |
+| Nível 2 | Arquitetura, resiliência, persistência, observabilidade, Docker. |
+| Nível 3 · Avançado | Escala, concorrência, design documentado, infraestrutura. |
 
-## Esqueleto de cada `niveis/<nivel>.md`
+## Esqueleto de cada `niveis/nivel-<N>.md`
 
 ```markdown
-# [Desafio] · Nível [X]
+# [Desafio] · Nível N
 
 ## Pré-requisito
 Inclui tudo do nível anterior.
