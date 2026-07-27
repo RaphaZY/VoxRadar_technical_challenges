@@ -1,18 +1,15 @@
-# Dependências sugeridas — ajuste conforme a sua abordagem.
-# (Descomente/adicione o que for usar.)
+# Alternativa simples de dependencias para o nivel Junior.
+# A partir do nivel Pleno, use o Poetry (pyproject.toml) em vez deste arquivo.
+# Descomente/adicione o que for usar na sua abordagem.
 
-# --- Requisições HTTP ---
+# Requisicoes HTTP
 # requests
 # httpx
 
-# --- Automação de navegador (alternativa a HTTP puro) ---
+# Automacao de navegador (alternativa ao HTTP puro)
 # playwright
 # selenium
 
-# --- Parsing / dados ---
+# Parsing / dados
 # beautifulsoup4
-# pydantic
 # python-dotenv
-
-# --- Testes (bônus) ---
-# pytest

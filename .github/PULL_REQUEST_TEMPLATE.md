@@ -1,22 +1,28 @@
 <!--
-  Obrigado por participar de um desafio técnico da VoxRadar!
+  Obrigado por participar de um desafio técnico da VoxRadar.
   Preencha as seções abaixo. Um PR bem descrito conta pontos.
 -->
 
 ## 🧩 Desafio
 
-- **Desafio:** <!-- ex.: Kwai -->
-- **Branch base:** `challenge/<slug>`
+- **Desafio:** Kwai
+- **Nível escolhido:** <!-- junior | pleno | senior | especialista -->
+- **Branch base:** `challenge/kwai`
+- **Branch de solução:** `solution/kwai-<nivel>-<seu-usuario>`
 - **Candidato(a):** <!-- seu nome / usuário -->
 
 ## 📝 Resumo da solução
 
 <!-- Explique em poucas linhas a abordagem geral e as principais decisões de engenharia. -->
 
+## 🧭 Abordagem de acesso ao Kwai
+
+<!-- HTTP puro (endpoints) ou automação de navegador? Por quê? Trade-offs? -->
+
 ## ⚙️ Como executar
 
 ```bash
-# passo a passo para instalar dependências e rodar
+# passo a passo para instalar dependências e rodar cada modo
 ```
 
 ## 🧠 Decisões e trade-offs
@@ -25,9 +31,11 @@
 
 ## ✅ Checklist de entrega
 
-<!-- Copie e marque o checklist específico do desafio (está no README da branch). -->
+<!-- Copie e marque o checklist do NÍVEL escolhido (está em niveis/<nivel>.md). -->
 
-- [ ] Li o README do desafio e cumpri os requisitos funcionais
+- [ ] Li o arquivo do meu nível (`niveis/<nivel>.md`) e cumpri os requisitos
+- [ ] A saída adere aos schemas (`docs/schemas.md`)
+- [ ] Nomeei a branch como `solution/kwai-<nivel>-<usuario>`
 - [ ] Documentei como rodar o projeto
 - [ ] Não commitei credenciais/segredos (usei `.env` + `.env.example`)
 - [ ] Descrevi minhas decisões e limitações neste PR
