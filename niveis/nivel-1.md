@@ -1,12 +1,12 @@
-# Kwai · Nível 🔵 Pleno
+# Kwai · Nível 1 🔵
 
 > **Foco:** boas práticas de engenharia de software em cima de uma coleta correta.
-> **Pré-requisito:** tudo do nível [Júnior](junior.md).
+> **Pré-requisito:** tudo do [Nível 0](nivel-0.md).
 > Leia antes o [problema comum](../README.md#-o-problema-comum-a-todos-os-níveis) e os [schemas](../docs/schemas.md).
 
 ---
 
-## O que este nível cobra (além do Júnior)
+## O que este nível cobra (além do Nível 0)
 
 ### Gestão de dependências com Poetry
 - Projeto gerenciado por **Poetry** (`pyproject.toml` + `poetry.lock` commitado).
@@ -33,7 +33,7 @@
 
 ## Entregáveis
 
-- [ ] Tudo do Júnior.
+- [ ] Tudo do Nível 0.
 - [ ] `pyproject.toml` + `poetry.lock`.
 - [ ] Suíte de testes executável (`poetry run pytest`).
 - [ ] Configuração de lint/type-check (ex.: `ruff`, `mypy`) declarada no `pyproject.toml`.
@@ -43,7 +43,7 @@
 
 ## Checklist de entrega
 
-Copie para o seu PR (inclui os itens do Júnior).
+Copie para o seu PR (inclui os itens do Nível 0).
 
 **Engenharia**
 - [ ] Projeto gerenciado com Poetry (`poetry.lock` commitado)
@@ -86,4 +86,4 @@ Copie para o seu PR (inclui os itens do Júnior).
 - Concorrência/async em larga escala, observabilidade com métricas.
 - Coleta distribuída, filas, agendamento.
 
-Isso é escopo **Sênior** e **Especialista**.
+Isso é escopo dos níveis **2** e **3**.

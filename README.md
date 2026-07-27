@@ -1,6 +1,6 @@
 # Desafio Técnico · Kwai
 
-> **Área:** Web Scraping / Coleta de dados · **Branch:** `challenge/kwai` · **Níveis:** Júnior · Pleno · Sênior · Especialista
+> **Área:** Web Scraping / Coleta de dados · **Branch:** `challenge/kwai` · **Níveis:** 0 (Iniciante) · 1 · 2 · 3 (Avançado)
 >
 > ℹ️ O processo geral (fork, entrega e avaliação) está no [README da `main`](../../tree/main). Esta branch descreve **apenas este desafio** e **este README é o índice**: ele explica o problema, o que há em cada arquivo e como escolher o seu nível.
 
@@ -34,10 +34,10 @@ Cada nível **inclui tudo do anterior** e adiciona novas exigências. Resolva **
 
 | Nível | Foco | Requisitos e avaliação |
 |---|---|---|
-| 🟢 **Júnior** | Fazer as 3 funcionalidades funcionarem com código limpo. | [`niveis/junior.md`](niveis/junior.md) |
-| 🔵 **Pleno** | Engenharia de software: Poetry, testes, tipagem, CLI robusta. | [`niveis/pleno.md`](niveis/pleno.md) |
-| 🟣 **Sênior** | Arquitetura, resiliência, persistência, observabilidade, Docker. | [`niveis/senior.md`](niveis/senior.md) |
-| 🔴 **Especialista** | Escala, concorrência, design documentado, infraestrutura. | [`niveis/especialista.md`](niveis/especialista.md) |
+| 🟢 **Nível 0 · Iniciante** | Fazer as 3 funcionalidades funcionarem com código limpo. | [`niveis/nivel-0.md`](niveis/nivel-0.md) |
+| 🔵 **Nível 1** | Engenharia de software: Poetry, testes, tipagem, CLI robusta. | [`niveis/nivel-1.md`](niveis/nivel-1.md) |
+| 🟣 **Nível 2** | Arquitetura, resiliência, persistência, observabilidade, Docker. | [`niveis/nivel-2.md`](niveis/nivel-2.md) |
+| 🔴 **Nível 3 · Avançado** | Escala, concorrência, design documentado, infraestrutura. | [`niveis/nivel-3.md`](niveis/nivel-3.md) |
 
 Leia também [`docs/avaliacao.md`](docs/avaliacao.md) para entender **como pontuamos**.
 
@@ -49,15 +49,15 @@ Leia também [`docs/avaliacao.md`](docs/avaliacao.md) para entender **como pontu
 challenge/kwai/
 ├── README.md              # você está aqui: índice do desafio
 ├── niveis/
-│   ├── junior.md          # requisitos + checklist + critérios do nível Júnior
-│   ├── pleno.md           # idem, nível Pleno
-│   ├── senior.md          # idem, nível Sênior
-│   └── especialista.md    # idem, nível Especialista
+│   ├── nivel-0.md         # requisitos + checklist + critérios do Nível 0 (Iniciante)
+│   ├── nivel-1.md         # idem, Nível 1
+│   ├── nivel-2.md         # idem, Nível 2
+│   └── nivel-3.md         # idem, Nível 3 (Avançado)
 ├── docs/
 │   ├── schemas.md         # schemas de saída (Postagem, Comentario)
 │   └── avaliacao.md       # método de pontuação e régua geral
-├── pyproject.toml         # gestão de dependências com Poetry (Pleno+)
-├── requirements.txt       # alternativa simples (Júnior)
+├── pyproject.toml         # gestão de dependências com Poetry (Nível 1+)
+├── requirements.txt       # alternativa simples (Nível 0)
 ├── .env.example           # variáveis de configuração de exemplo
 └── .github/
     └── PULL_REQUEST_TEMPLATE.md
@@ -82,9 +82,9 @@ Fluxo completo no [README da `main`](../../tree/main). Em resumo:
 
 ```bash
 git checkout challenge/kwai
-git checkout -b solution/kwai-<nivel>-<seu-usuario>   # ex.: solution/kwai-pleno-imnascimento
+git checkout -b solution/kwai-nivel<N>-<seu-usuario>   # ex.: solution/kwai-nivel1-imnascimento
 # ... desenvolva ...
-git push origin solution/kwai-<nivel>-<seu-usuario>
+git push origin solution/kwai-nivel<N>-<seu-usuario>
 ```
 
 Abra o PR com **base:** `challenge/kwai` e **compare:** a sua branch de solução, preenchendo o template. O nome da branch **deve conter o desafio e o nível**.

@@ -1,12 +1,12 @@
-# Kwai · Nível 🟣 Sênior
+# Kwai · Nível 2 🟣
 
 > **Foco:** arquitetura, resiliência, persistência e operação. Um coletor que você colocaria em produção.
-> **Pré-requisito:** tudo do nível [Pleno](pleno.md).
+> **Pré-requisito:** tudo do [Nível 1](nivel-1.md).
 > Leia antes o [problema comum](../README.md#-o-problema-comum-a-todos-os-níveis) e os [schemas](../docs/schemas.md).
 
 ---
 
-## O que este nível cobra (além do Pleno)
+## O que este nível cobra (além do Nível 1)
 
 ### Arquitetura
 - **Camadas bem definidas:** coleta (acesso à plataforma), transformação/normalização, domínio (modelos) e persistência, com dependências apontando para dentro.
@@ -41,7 +41,7 @@
 
 ## Entregáveis
 
-- [ ] Tudo do Pleno.
+- [ ] Tudo do Nível 1.
 - [ ] Camada de persistência com migrações.
 - [ ] `ARCHITECTURE.md` (ou ADRs) com diagrama e decisões.
 - [ ] `Dockerfile` + `docker-compose.yml`.
@@ -51,7 +51,7 @@
 
 ## Checklist de entrega
 
-Copie para o seu PR (inclui os itens do Pleno).
+Copie para o seu PR (inclui os itens do Nível 1).
 
 **Arquitetura e persistência**
 - [ ] Camadas separadas e dependências apontando para dentro
@@ -97,4 +97,4 @@ Copie para o seu PR (inclui os itens do Pleno).
 - Engenharia reversa documentada de endpoints em profundidade.
 - Infraestrutura como código completa, monitoramento com alertas.
 
-Isso é escopo **Especialista**.
+Isso é escopo do **Nível 3**.

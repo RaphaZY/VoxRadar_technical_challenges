@@ -1,6 +1,6 @@
 # Como avaliamos
 
-Este documento explica o **método** de pontuação. Os **pesos específicos** de cada nível estão em `niveis/<nivel>.md`.
+Este documento explica o **método** de pontuação. Os **pesos específicos** de cada nível estão em `niveis/nivel-<N>.md`.
 
 ## Princípios
 

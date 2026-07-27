@@ -1,12 +1,12 @@
-# Kwai · Nível 🔴 Especialista
+# Kwai · Nível 3 🔴 Avançado
 
 > **Foco:** um sistema de coleta em escala, com visão de produção real: throughput, distribuição, operação e decisões de plataforma.
-> **Pré-requisito:** tudo do nível [Sênior](senior.md).
+> **Pré-requisito:** tudo do [Nível 2](nivel-2.md).
 > Leia antes o [problema comum](../README.md#-o-problema-comum-a-todos-os-níveis) e os [schemas](../docs/schemas.md).
 
 ---
 
-## O que este nível cobra (além do Sênior)
+## O que este nível cobra (além do Nível 2)
 
 ### Escala e distribuição
 - **Coleta distribuída:** produção de trabalho e **workers** separados, comunicando por **fila** (ex.: Redis, RabbitMQ, Celery/Arq).
@@ -40,7 +40,7 @@
 
 ## Entregáveis
 
-- [ ] Tudo do Sênior.
+- [ ] Tudo do Nível 2.
 - [ ] Componentes distribuídos (fila + workers) executáveis via compose/k8s.
 - [ ] `DESIGN.md` com arquitetura, capacity planning e trade-offs.
 - [ ] Documento de engenharia reversa dos endpoints (ou estratégia headless em escala).
@@ -51,7 +51,7 @@
 
 ## Checklist de entrega
 
-Copie para o seu PR (inclui os itens do Sênior).
+Copie para o seu PR (inclui os itens do Nível 2).
 
 **Escala**
 - [ ] Fila + workers separados

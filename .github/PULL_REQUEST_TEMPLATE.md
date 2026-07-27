@@ -6,9 +6,9 @@
 ## 🧩 Desafio
 
 - **Desafio:** Kwai
-- **Nível escolhido:** <!-- junior | pleno | senior | especialista -->
+- **Nível escolhido:** <!-- 0 | 1 | 2 | 3 -->
 - **Branch base:** `challenge/kwai`
-- **Branch de solução:** `solution/kwai-<nivel>-<seu-usuario>`
+- **Branch de solução:** `solution/kwai-nivel<N>-<seu-usuario>`
 - **Candidato(a):** <!-- seu nome / usuário -->
 
 ## 📝 Resumo da solução
@@ -31,11 +31,11 @@
 
 ## ✅ Checklist de entrega
 
-<!-- Copie e marque o checklist do NÍVEL escolhido (está em niveis/<nivel>.md). -->
+<!-- Copie e marque o checklist do NÍVEL escolhido (está em niveis/nivel-<N>.md). -->
 
-- [ ] Li o arquivo do meu nível (`niveis/<nivel>.md`) e cumpri os requisitos
+- [ ] Li o arquivo do meu nível (`niveis/nivel-<N>.md`) e cumpri os requisitos
 - [ ] A saída adere aos schemas (`docs/schemas.md`)
-- [ ] Nomeei a branch como `solution/kwai-<nivel>-<usuario>`
+- [ ] Nomeei a branch como `solution/kwai-nivel<N>-<usuario>`
 - [ ] Documentei como rodar o projeto
 - [ ] Não commitei credenciais/segredos (usei `.env` + `.env.example`)
 - [ ] Descrevi minhas decisões e limitações neste PR

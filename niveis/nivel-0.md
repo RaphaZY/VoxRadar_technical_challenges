@@ -1,7 +1,7 @@
-# Kwai · Nível 🟢 Júnior
+# Kwai · Nível 0 🟢 Iniciante
 
 > **Foco:** fazer as três funcionalidades funcionarem, com código organizado e legível.
-> **Pré-requisito:** nenhum (este é o nível base).
+> **Pré-requisito:** nenhum (este é o nível de entrada).
 > Leia antes o [problema comum](../README.md#-o-problema-comum-a-todos-os-níveis) e os [schemas](../docs/schemas.md).
 
 ---
@@ -79,4 +79,4 @@ Para não gastar seu tempo além do escopo, **não** cobramos aqui:
 - Persistência em banco de dados, Docker, concorrência/async.
 - Arquitetura em camadas, observabilidade, resiliência avançada.
 
-Isso é escopo dos níveis **Pleno**, **Sênior** e **Especialista**.
+Isso é escopo dos níveis **1**, **2** e **3**.

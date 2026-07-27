@@ -1,4 +1,4 @@
-# Gestão de dependências com Poetry, esperada a partir do nível Pleno.
+# Gestão de dependências com Poetry, esperada a partir do Nível 1.
 # Ajuste as dependências conforme a sua abordagem (HTTP puro ou navegador).
 # Uso:
 #   poetry install
@@ -28,7 +28,7 @@ python = "^3.11"
 # typer = "^0.12"
 
 [tool.poetry.group.dev.dependencies]
-# Ferramentas de qualidade esperadas a partir do Pleno:
+# Ferramentas de qualidade esperadas a partir do Nível 1:
 # pytest = "^8.2"
 # pytest-cov = "^5.0"
 # mypy = "^1.10"
