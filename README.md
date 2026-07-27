@@ -1,94 +1,212 @@
-# VoxRadar · Desafios Técnicos
+# Desafio Técnico · Kwai — Coleta de Postagens, Engajamento e Comentários
 
-> Repositório oficial de **desafios técnicos** da VoxRadar para avaliação de pessoas desenvolvedoras.
-
-Os desafios aqui **não são exercícios artificiais**: são recortes de **problemas reais** que enfrentamos no dia a dia (coleta de dados, monitoramento de redes sociais, engenharia de dados e automação). O objetivo é avaliar como você pensa, estrutura e entrega uma solução de engenharia — não apenas se o código "roda".
-
----
-
-## 📌 Como funciona
-
-1. **Escolha o desafio** na tabela de [Desafios disponíveis](#-desafios-disponíveis).
-2. **Faça um _fork_** deste repositório.
-3. No seu fork, faça o **checkout da branch do desafio** (ex.: `challenge/kwai`).
-4. **Resolva o desafio** seguindo os requisitos e o _checklist_ descritos na branch.
-5. **Abra um Pull Request** do seu fork para a branch original do desafio (ver [Como entregar](#-como-entregar)).
-
-Cada desafio é **autocontido na sua branch**: lá você encontra o contexto, os requisitos funcionais e técnicos, o _checklist_ de entrega e os critérios de avaliação.
+> **Área:** Web Scraping / Coleta de dados · **Nível:** Júnior/Pleno · **Branch:** `challenge/kwai`
+>
+> ℹ️ O processo geral (fork, entrega, avaliação) está no [README da `main`](../../tree/main). Esta branch descreve **apenas este desafio**.
 
 ---
 
-## 🗂️ Estrutura do repositório
+## 🎯 Contexto
 
-| Branch | Conteúdo |
+A VoxRadar monitora redes sociais para entender **o que está sendo dito** sobre marcas, temas e pessoas. Para isso, precisamos de coletores confiáveis que transformem o conteúdo público de uma plataforma em **dados estruturados** — prontos para análise de engajamento, sentimento e alcance.
+
+O [Kwai](https://www.kwai.com/) é uma dessas plataformas. Neste desafio você vai construir um **coletor de dados do Kwai** que resolve três necessidades reais do nosso time de dados.
+
+---
+
+## 🧩 Objetivo
+
+Construir uma ferramenta que colete conteúdo **público** do Kwai em três modos, exportando o resultado em um formato **estruturado e consistente** (JSON).
+
+---
+
+## 📋 Requisitos funcionais
+
+Sua solução deve implementar as **três funcionalidades** abaixo. Cada uma recebe uma entrada e produz uma saída estruturada.
+
+### 1. Busca por palavra-chave
+> **Dado** uma palavra-chave, **coletar postagens** relacionadas, contendo **link, texto e engajamento**.
+
+- **Entrada:** uma palavra-chave (ex.: `"eleições"`) e, opcionalmente, um limite de resultados.
+- **Saída:** lista de postagens no schema [`Postagem`](#postagem).
+
+### 2. Postagens de um usuário
+> **Dado** a conta de um usuário, **coletar todas as postagens** daquele usuário.
+
+- **Entrada:** identificador do usuário (username, ID ou URL do perfil) e, opcionalmente, um limite.
+- **Saída:** lista de postagens no schema [`Postagem`](#postagem).
+
+### 3. Comentários de uma postagem
+> **Dado** o link de uma postagem, **coletar os comentários** dessa postagem.
+
+- **Entrada:** URL de uma postagem e, opcionalmente, um limite.
+- **Saída:** lista de comentários no schema [`Comentario`](#comentario).
+
+---
+
+## 🧾 Schemas de saída
+
+A saída deve ser **JSON** (arquivo `.json` ou `.jsonl`). Use os campos abaixo como referência; se algum não estiver disponível, use `null` e **documente** o motivo. Campos extras são bem-vindos.
+
+<a name="postagem"></a>
+### `Postagem`
+```json
+{
+  "id": "string | null",
+  "url": "https://www.kwai.com/...",
+  "autor": {
+    "usuario": "string | null",
+    "id": "string | null",
+    "url_perfil": "string | null"
+  },
+  "texto": "string | null",
+  "data_publicacao": "ISO-8601 | null",
+  "engajamento": {
+    "curtidas": 0,
+    "comentarios": 0,
+    "compartilhamentos": 0,
+    "visualizacoes": 0
+  },
+  "coletado_em": "ISO-8601"
+}
+```
+
+<a name="comentario"></a>
+### `Comentario`
+```json
+{
+  "id": "string | null",
+  "postagem_url": "https://www.kwai.com/...",
+  "autor": {
+    "usuario": "string | null",
+    "id": "string | null"
+  },
+  "texto": "string",
+  "curtidas": 0,
+  "data": "ISO-8601 | null",
+  "coletado_em": "ISO-8601"
+}
+```
+
+---
+
+## 🛠️ Requisitos técnicos
+
+- **Linguagem:** Python é **preferencial**. Outra stack é aceita, mas justifique no PR.
+- **Interface de uso:** uma **CLI** ou scripts claros, com as três funcionalidades acionáveis por parâmetro. Exemplos:
+  ```bash
+  python -m kwai_collector busca --keyword "eleicoes" --limit 50 --out out/busca.json
+  python -m kwai_collector usuario --user "@perfil" --limit 100 --out out/usuario.json
+  python -m kwai_collector comentarios --url "https://www.kwai.com/@perfil/video/XXXX" --out out/comentarios.json
+  ```
+- **Saída estruturada:** JSON conforme os [schemas](#-schemas-de-saída).
+- **Configuração:** parâmetros e segredos via `.env`/argumentos. **Nada de credenciais no código.** Forneça um `.env.example`.
+- **Robustez:** tratamento de erros (rede, HTTP, conteúdo ausente), _timeout_ e **respeito a _rate limits_** (delays/backoff).
+- **Logs:** mensagens de progresso e de erro compreensíveis.
+- **Documentação:** README de execução (instalação, como rodar cada modo, exemplos).
+
+> 💡 **Sobre a abordagem:** o Kwai carrega conteúdo dinamicamente. Você pode optar por consumir os _endpoints_ que a página usa (requests) ou por automação de navegador (Playwright/Selenium). **Ambas são válidas** — descreva sua escolha e os _trade-offs_ no PR.
+
+---
+
+## 📦 Entregáveis
+
+- [ ] Código-fonte da ferramenta com as 3 funcionalidades.
+- [ ] `README.md` com instruções de instalação e execução.
+- [ ] `requirements.txt` (ou equivalente) com as dependências.
+- [ ] `.env.example` (se houver configuração/segredos).
+- [ ] **Amostras de saída** em `samples/` — um arquivo por funcionalidade.
+
+---
+
+## 🧱 Estrutura sugerida
+
+> Sugestão, **não obrigatória**. Organize como fizer sentido para você.
+
+```
+kwai_collector/
+├── __init__.py
+├── __main__.py          # CLI
+├── busca.py             # func. 1 — busca por palavra-chave
+├── usuario.py           # func. 2 — postagens de um usuário
+├── comentarios.py       # func. 3 — comentários de uma postagem
+├── models.py            # schemas (dataclasses/pydantic)
+├── client.py            # http/navegador, rate limit, retry
+└── utils.py
+samples/
+├── busca.json
+├── usuario.json
+└── comentarios.json
+tests/                   # opcional (bônus)
+.env.example
+requirements.txt
+README.md
+```
+
+---
+
+## ✅ Checklist de entrega
+
+Copie para o seu Pull Request e marque conforme concluir:
+
+**Funcionalidades**
+- [ ] 1 — Busca por palavra-chave (link, texto, engajamento)
+- [ ] 2 — Todas as postagens de um usuário
+- [ ] 3 — Comentários de uma postagem por link
+
+**Qualidade e execução**
+- [ ] Saída em JSON seguindo os schemas (`Postagem` / `Comentario`)
+- [ ] `README.md` explica como instalar e rodar cada modo
+- [ ] `requirements.txt` (ou equivalente) presente
+- [ ] `.env.example` fornecido e **nenhum segredo commitado**
+- [ ] Amostras de saída em `samples/`
+- [ ] Tratamento de erros e respeito a _rate limit_
+- [ ] PR descreve a abordagem, decisões e limitações
+
+**Bônus (não obrigatório)**
+- [ ] Testes automatizados
+- [ ] Paginação completa / deduplicação de resultados
+- [ ] Persistência em banco de dados
+- [ ] Dockerfile / execução conteinerizada
+- [ ] Retry com _backoff_ exponencial
+
+---
+
+## 📊 Critérios de avaliação
+
+| Critério | Peso |
 |---|---|
-| `main` | Este README, o processo, e os _templates_ (PR e novos desafios). |
-| `challenge/<slug>` | Um desafio completo e autocontido (contexto + requisitos + checklist + critérios). |
+| **Corretude** — as 3 funcionalidades coletam os dados pedidos | 40% |
+| **Qualidade de código** — organização, legibilidade, nomes | 20% |
+| **Robustez** — erros, casos de borda, rate limit | 15% |
+| **Documentação** — README, execução e decisões no PR | 15% |
+| **Consistência da saída** — aderência aos schemas | 10% |
+| **Bônus** — testes, persistência, Docker, etc. | +10% (extra) |
 
-**Convenção de branches de desafio:** `challenge/<slug>` — ex.: `challenge/kwai`.
-
-**Convenção da branch de entrega (candidato):** a partir da branch do desafio, crie `solution/<seu-usuario>` no seu fork.
-
----
-
-## 🎯 Desafios disponíveis
-
-| Desafio | Branch | Área | Nível | Status |
-|---|---|---|---|---|
-| **Kwai — Coleta de postagens, engajamento e comentários** | [`challenge/kwai`](../../tree/challenge/kwai) | Web Scraping / Coleta de dados | Júnior/Pleno | ✅ Aberto |
-
-> Novos desafios serão adicionados como novas branches `challenge/*` e listados aqui.
+> Buscamos uma solução **simples, correta e bem explicada**. Não é necessário resolver escala industrial nem evasão avançada de bloqueios — isso é escopo de níveis mais sêniores.
 
 ---
 
 ## 📤 Como entregar
 
-Adotamos o fluxo **Fork + Pull Request**:
+Fluxo **Fork + Pull Request** (detalhado no [README da `main`](../../tree/main)):
 
-1. **Fork** deste repositório para a sua conta.
-2. No seu fork:
-   ```bash
-   git checkout challenge/<slug>          # ex.: challenge/kwai
-   git checkout -b solution/<seu-usuario> # sua branch de solução
-   ```
-3. Desenvolva, commitando com mensagens claras e um histórico legível.
-4. Faça _push_ da sua branch `solution/*` para o **seu fork**.
-5. Abra um **Pull Request** apontando:
-   - **base:** `challenge/<slug>` (deste repositório)
-   - **compare:** `solution/<seu-usuario>` (do seu fork)
-6. Preencha o **template do PR** (marque o _checklist_ de entrega e descreva suas decisões).
-
-> Prefira um PR bem documentado a um README gigante no seu código. Queremos entender **suas decisões**.
+```bash
+# no seu fork
+git checkout challenge/kwai
+git checkout -b solution/<seu-usuario>
+# ... desenvolva ...
+git push origin solution/<seu-usuario>
+```
+Abra o PR com **base:** `challenge/kwai` e **compare:** `solution/<seu-usuario>`, preenchendo o template.
 
 ---
 
-## ✅ O que avaliamos
+## ⚠️ Regras e observações
 
-Os pesos exatos são detalhados em cada desafio, mas em geral olhamos para:
+- Colete **apenas conteúdo público**. Não tente acessar áreas privadas ou burlar autenticação.
+- Respeite os **Termos de Uso** do Kwai, os _rate limits_ e a **LGPD**. Use os dados exclusivamente para os fins deste desafio.
+- Prefira **contas de teste** e palavras-chave neutras nas suas amostras.
+- Se a coleta completa não for viável no tempo disponível, **entregue o que funcionar** e explique no PR o que faria a seguir. **Valorizamos honestidade técnica.**
 
-- **Corretude** — a solução resolve o que foi pedido?
-- **Qualidade de código** — legibilidade, organização, nomes, coesão.
-- **Decisões de engenharia** — trade-offs conscientes e bem justificados.
-- **Robustez** — tratamento de erros, casos de borda, resiliência.
-- **Documentação** — como rodar, o que foi feito e o que ficou de fora.
-- **Testes** — quando aplicável ao nível do desafio.
-- **Comunicação** — clareza no PR e nos commits.
-
-Não valorizamos "over-engineering". Uma solução **simples, correta e bem explicada** vale mais do que uma complexa e confusa.
-
----
-
-## 🧭 Diretrizes gerais
-
-- **Stack:** Python é a linguagem **preferencial** da VoxRadar. Você pode usar outra stack, mas **justifique a escolha** no PR.
-- **Dependências:** liste todas (ex.: `requirements.txt`, `pyproject.toml`) e explique como rodar.
-- **Segredos:** **nunca** commite credenciais, tokens ou cookies. Use `.env` e forneça um `.env.example`.
-- **Ética e legalidade:** respeite os _Termos de Uso_ das plataformas, _rate limits_ e a legislação aplicável (ex.: LGPD). Trate os dados coletados apenas para os fins do desafio.
-- **Prazo:** combinado com o time de recrutamento no momento do convite.
-- **Dúvidas:** abra uma _issue_ ou fale com o contato do processo seletivo.
-
----
-
-## 📄 Licença
-
-Uso restrito ao processo seletivo da VoxRadar. As soluções enviadas permanecem de autoria do candidato; a VoxRadar as utiliza exclusivamente para fins de avaliação.
+Boa sorte! 🚀

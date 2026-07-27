@@ -1,0 +1,18 @@
+# Dependências sugeridas — ajuste conforme a sua abordagem.
+# (Descomente/adicione o que for usar.)
+
+# --- Requisições HTTP ---
+# requests
+# httpx
+
+# --- Automação de navegador (alternativa a HTTP puro) ---
+# playwright
+# selenium
+
+# --- Parsing / dados ---
+# beautifulsoup4
+# pydantic
+# python-dotenv
+
+# --- Testes (bônus) ---
+# pytest
