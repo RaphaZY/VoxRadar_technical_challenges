@@ -1,6 +1,6 @@
 # VoxRadar · Desafios Técnicos
 
-> Repositório oficial de **desafios técnicos** da VoxRadar para avaliação de pessoas desenvolvedoras.
+> Repositório oficial de **desafios técnicos** da VoxRadar, usados para **avaliar e alinhar** pessoas desenvolvedoras: em contratação, em avaliações de times internos, em promoções e no nivelamento técnico entre devs e squads.
 
 Os desafios aqui **não são exercícios artificiais**. São recortes de **problemas reais** que enfrentamos no dia a dia: coleta de dados, monitoramento de redes sociais, engenharia de dados e automação. O objetivo é avaliar como você pensa, estrutura e entrega uma solução de engenharia, não apenas se o código "roda".
 
@@ -29,7 +29,7 @@ solution/kwai-nivel1-maria-silva
 solution/kwai-nivel2-joao99
 ```
 
-Assim, à medida que novos desafios e candidatos entram, conseguimos identificar **de imediato** qual desafio, qual nível e quem está resolvendo.
+Assim, à medida que novos desafios e participantes entram, conseguimos identificar **de imediato** qual desafio, qual nível e quem está resolvendo.
 
 ---
 
@@ -74,7 +74,7 @@ challenge/<slug>/
 
 ## 📈 Os quatro níveis
 
-Todo desafio é oferecido em quatro níveis numerados. Cada nível **inclui tudo do anterior** e adiciona novas exigências. Você escolhe **um** nível para resolver (o combinado com o time de recrutamento).
+Todo desafio é oferecido em quatro níveis numerados. Cada nível **inclui tudo do anterior** e adiciona novas exigências. Você escolhe **um** nível para resolver (o combinado com o time responsável).
 
 | Nível | O que se espera, em resumo |
 |---|---|
@@ -132,11 +132,20 @@ Não valorizamos "over-engineering". Uma solução **simples, correta e bem expl
 - **Dependências:** a partir do Nível 1 usamos **Poetry** (`pyproject.toml`). O `requirements.txt` é aceito no Nível 0.
 - **Segredos:** **nunca** commite credenciais, tokens ou cookies. Use `.env` e forneça um `.env.example`.
 - **Ética e legalidade:** respeite os _Termos de Uso_ das plataformas, os _rate limits_ e a legislação aplicável (ex.: LGPD). Trate os dados coletados apenas para os fins do desafio.
-- **Prazo:** combinado com o time de recrutamento no momento do convite.
-- **Dúvidas:** abra uma _issue_ ou fale com o contato do processo seletivo.
+- **Prazo:** combinado com o time responsável no momento do convite.
+- **Dúvidas:** abra uma _issue_ ou fale com o time responsável pela avaliação.
 
 ---
 
-## 📄 Licença
+## 🎯 Propósito e uso
 
-Uso restrito ao processo seletivo da VoxRadar. As soluções enviadas permanecem de autoria do candidato. A VoxRadar as utiliza exclusivamente para fins de avaliação.
+Estes desafios são uma ferramenta de **avaliação e alinhamento técnico** da VoxRadar. Não servem apenas para contratação ou promoção. Usamos em vários contextos:
+
+- **Contratação:** avaliar candidatos de forma prática e justa.
+- **Times internos:** calibrar e acompanhar o nível técnico de quem já está na casa.
+- **Promoção:** evidenciar prontidão para o próximo nível.
+- **Alinhamento:** nivelar expectativas técnicas entre devs e squads, com uma régua comum.
+
+### Uso do código
+
+Ao enviar uma solução, você concede à VoxRadar o direito de **usar, adaptar e manter** o código entregue para fins internos: avaliação, referência técnica, evolução dos próprios desafios e apoio ao trabalho dos times. A **autoria continua sua** e o crédito é preservado, mas a VoxRadar pode aproveitar o código produzido, ainda que tenha sido escrito por você durante o desafio.
