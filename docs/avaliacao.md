@@ -30,4 +30,3 @@ A nota final é a soma ponderada (peso × nota) normalizada. Itens de **bônus**
 - A saída adere aos [`schemas`](schemas.md)?
 - Há segredos commitados? (isso é eliminatório)
 - O histórico de commits e o PR comunicam bem o raciocínio?
-- As escolhas respeitam ética, Termos de Uso e LGPD?

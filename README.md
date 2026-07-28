@@ -20,7 +20,7 @@ Independentemente do nível, a sua solução precisa resolver **três necessidad
 
 | # | Funcionalidade | Entrada | Saída |
 |---|---|---|---|
-| 1 | **Busca por palavra-chave** | uma palavra-chave | postagens relacionadas com **link, texto e engajamento** (`Postagem`) |
+| 1 | **Busca por palavra-chave** | uma palavra-chave ou mais | postagens relacionadas com **link, texto e engajamento** (`Postagem`) |
 | 2 | **Postagens de um usuário** | a conta/perfil do usuário | **todas as postagens** daquele usuário (`Postagem`) |
 | 3 | **Comentários de uma postagem** | o link de uma postagem | os **comentários** daquela postagem (`Comentario`) |
 
@@ -91,11 +91,5 @@ Abra o PR com **base:** `challenge/kwai` e **compare:** a sua branch de soluçã
 
 ---
 
-## ⚠️ Regras e ética
-
-- Colete **apenas conteúdo público**. Não tente acessar áreas privadas nem burlar autenticação.
-- Respeite os **Termos de Uso** do Kwai, os _rate limits_ e a **LGPD**. Use os dados exclusivamente para os fins deste desafio.
-- Prefira **contas de teste** e palavras-chave neutras nas amostras.
-- Se a coleta completa não for viável no tempo disponível, **entregue o que funcionar** e explique no PR o que faria a seguir. **Valorizamos honestidade técnica.**
 
 Boa sorte. 🚀
